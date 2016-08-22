@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Script Quickstart</string>
+    <string name="addToWh">Добавить на склад</string>
+    <string name="takeFromWh">Взять со склада</string>
+    <string name="sendRequest">Выполнить операцию</string>
+    <string name="inputAmount">Введите количество:</string>
+    <string name="done">Готово</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="takenTextView">Взято</string>
+    <string name="remainsTextView">Осталось</string>
+    <string name="inputNumber">Введите количество...</string>
+    <string name="qrInfo">Проверьте правильность информации:</string>
+    <string name="inputRemainings">Ввести остаток</string>
+    <string name="backToMain">На главный экран</string>
+</resources>
