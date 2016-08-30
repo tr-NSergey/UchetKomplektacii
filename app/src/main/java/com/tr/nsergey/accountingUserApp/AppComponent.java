@@ -13,4 +13,5 @@ public interface AppComponent {
     void inject(PersistenceModel persistenceModel);
     void inject(PersistencePresenter persistencePresenter);
     void inject(RequestTask requestTask);
+    void inject(RequestPresenter requestPresenter);
 }
