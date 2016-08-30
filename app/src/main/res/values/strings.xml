@@ -10,8 +10,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="takenTextView">Взято</string>
     <string name="remainsTextView">Осталось</string>
-    <string name="inputNumber">Введите количество...</string>
+    <string name="inputNumber">Введите количество…</string>
     <string name="qrInfo">Проверьте правильность информации:</string>
     <string name="inputRemainings">Ввести остаток</string>
     <string name="backToMain">На главный экран</string>
+    <string name="checkQty">Проверить количество</string>
+    <string name="enterPinCode">Введите ПИН-код:</string>
+    <string name="log_out">Log out</string>
+    <string name="check_queue">check queue</string>
 </resources>

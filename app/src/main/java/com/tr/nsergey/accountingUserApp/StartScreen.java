@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -29,17 +27,23 @@ import butterknife.ButterKnife;
 public class StartScreen extends Fragment {
 
     private static final String MESSAGE_PARAM = "message";
+    private static final String USERNAME = "username";
 
-    @Bind(R.id.addQtyButton)
+    @BindView(R.id.userName)
+    protected TextView userNameTextView;
+    @BindView(R.id.addQtyButton)
     protected Button mAddToWhButton;
-    @Bind(R.id.removeQtyButton)
+    @BindView(R.id.removeQtyButton)
     protected Button mTakeFromWhButton;
-    @Bind(R.id.remainsButton)
+    @BindView(R.id.remainsButton)
     protected Button mRemainsButton;
-    @Bind(R.id.infoTextViewSS)
+    @BindView(R.id.checkButton)
+    protected Button mCheckButton;
+    @BindView(R.id.infoTextViewSS)
     protected TextView mInfoTextView;
 
     private String infoMessage;
+    private String userName;
 
     private OnStartScreenInteractionListener mListener;
 
@@ -53,10 +57,11 @@ public class StartScreen extends Fragment {
      *
      * @return A new instance of fragment StartScreen.
      */
-    public static StartScreen newInstance(String message) {
+    public static StartScreen newInstance(String message, String userName) {
         StartScreen fragment = new StartScreen();
         Bundle args = new Bundle();
         args.putString(MESSAGE_PARAM, message);
+        args.putString(USERNAME, userName);
         fragment.setArguments(args);
         return fragment;
     }
@@ -65,14 +70,23 @@ public class StartScreen extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             infoMessage = getArguments().getString(MESSAGE_PARAM);
+            userName = getArguments().getString(USERNAME);
         }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        userNameTextView.setText(userName);
+    }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mAddToWhButton.setOnClickListener(v -> mListener.onAddToWhClick());
         mTakeFromWhButton.setOnClickListener(v -> mListener.onTakeFromWhClick());
         mRemainsButton.setOnClickListener(v -> mListener.onRemainsClick());
+        mCheckButton.setOnClickListener(v -> mListener.onCheckClick());
     }
 
     @Override
@@ -85,7 +99,7 @@ public class StartScreen extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.clear();
+        inflater.inflate(R.menu.menu_fragment_start_screen, menu);
     }
 
     @Override
@@ -124,5 +138,6 @@ public class StartScreen extends Fragment {
         void onAddToWhClick();
         void onTakeFromWhClick();
         void onRemainsClick();
+        void onCheckClick();
     }
 }

@@ -16,11 +16,23 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:paddingRight="16dp"
+            android:background="@color/colorPrimary"
+            android:gravity="left"
+            android:textColor="#ffffff"
+            android:text=""/>
         <Button
             android:id="@+id/addQtyButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="30"
+            android:layout_weight="24"
             android:layout_margin="16dp"
             android:background="@drawable/button_effect"
             android:textSize="30sp"
@@ -30,7 +42,7 @@
             android:id="@+id/removeQtyButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="30"
+            android:layout_weight="24"
             android:layout_margin="16dp"
             android:background="@drawable/button_effect"
             android:textSize="30sp"
@@ -40,10 +52,20 @@
             android:id="@+id/remainsButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="30"
+            android:layout_weight="24"
             android:layout_margin="16dp"
             android:background="@drawable/button_effect"
             android:textSize="30sp"
             android:text="@string/inputRemainings" />
+
+        <Button
+            android:id="@+id/checkButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="24"
+            android:layout_margin="16dp"
+            android:background="@drawable/button_effect"
+            android:textSize="30sp"
+            android:text="@string/checkQty" />
     </LinearLayout>
 </RelativeLayout>

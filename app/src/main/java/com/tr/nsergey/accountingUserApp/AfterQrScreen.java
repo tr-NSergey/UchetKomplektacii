@@ -1,13 +1,9 @@
 package com.tr.nsergey.accountingUserApp;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Debug;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,9 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.logging.Logger;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -39,11 +33,11 @@ public class AfterQrScreen extends Fragment {
     private static final String BTN_NAME_PARAM = "btnname";
 
     private OnAfterQrInteractionListener mListener;
-    @Bind(R.id.infoTextViewAQR)
+    @BindView(R.id.infoTextViewAQR)
     protected TextView infoLabel;
-    @Bind(R.id.mQtyEditText)
+    @BindView(R.id.mQtyEditText)
     protected EditText mQty;
-    @Bind(R.id.sendRequestButton)
+    @BindView(R.id.sendRequestButton)
     protected Button sendRequestButton;
 
     private String infoMessage;

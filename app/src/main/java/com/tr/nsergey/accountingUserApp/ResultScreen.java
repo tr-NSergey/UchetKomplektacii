@@ -14,7 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ResultScreen extends Fragment {
@@ -23,9 +23,9 @@ public class ResultScreen extends Fragment {
     private OnResultScreenInteractionListener mListener;
     private String infoMessage;
 
-    @Bind(R.id.infoTextViewRS)
+    @BindView(R.id.infoTextViewRS)
     TextView infoTextView;
-    @Bind(R.id.backToMain)
+    @BindView(R.id.backToMain)
     Button backToMain;
 
     public ResultScreen() {
