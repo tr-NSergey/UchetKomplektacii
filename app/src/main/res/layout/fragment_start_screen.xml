@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tr.nsergey.accountingUserApp.StartScreen">
+    tools:context=".View.StartScreen">
 
     <TextView
         android:id="@+id/infoTextViewSS"
@@ -23,49 +23,80 @@
             android:layout_margin="0dp"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
+            android:paddingLeft="8dp"
             android:paddingRight="16dp"
             android:background="@color/colorPrimary"
             android:gravity="left"
-            android:textColor="#ffffff"
+            android:textColor="@color/brightText"
             android:text=""/>
         <Button
             android:id="@+id/addQtyButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="24"
-            android:layout_margin="16dp"
+            android:layout_weight="20"
+            android:layout_margin="12dp"
             android:background="@drawable/button_effect"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:text="@string/addToWh" />
 
         <Button
             android:id="@+id/removeQtyButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="24"
-            android:layout_margin="16dp"
+            android:layout_weight="20"
+            android:layout_margin="12dp"
             android:background="@drawable/button_effect"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:text="@string/takeFromWh" />
 
         <Button
             android:id="@+id/remainsButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="24"
-            android:layout_margin="16dp"
+            android:layout_weight="20"
+            android:layout_margin="12dp"
             android:background="@drawable/button_effect"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:text="@string/inputRemainings" />
 
         <Button
             android:id="@+id/checkButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="24"
-            android:layout_margin="16dp"
+            android:layout_weight="20"
+            android:layout_margin="12dp"
             android:background="@drawable/button_effect"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:text="@string/checkQty" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarStyle"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/qrMode"
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/brightText"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="QR-код"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+            <Button
+                android:id="@+id/manualMode"
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:layout_height="wrap_content"
+                android:background="@color/mainBackground"
+                android:textColor="@color/darkText"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="Ручной ввод"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

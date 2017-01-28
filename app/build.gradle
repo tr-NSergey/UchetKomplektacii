@@ -5,6 +5,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'UchetKomplektacii'
+            keyPassword 'HiSilvia5469'
+            storeFile file('/home/Sergey/keystores/android.jks')
+            storePassword 'HiSilvia5469'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
     compileOptions {
@@ -12,44 +20,47 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     defaultConfig {
-        applicationId "com.tr.nsergey.accountingUserApp"
+        applicationId "com.tr.nsergey.uchetKomplektacii"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "2.0"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'),
                     'proguard-rules.pro'
+            debuggable false
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile('com.google.api-client:google-api-client-android:1.22.0') {
         exclude group: 'org.apache.httpcomponents'
     }
     compile('com.google.apis:google-api-services-script:v1-rev6-1.22.0') {
         exclude group: 'org.apache.httpcomponents'
     }
-    provided 'com.google.dagger:dagger-compiler:2.0.2'
-    provided 'org.glassfish:javax.annotation:10.0-b28'
-    provided 'com.google.auto.value:auto-value:1.2'
     compile 'com.google.dagger:dagger:2.0.2'
-    apt 'com.google.auto.value:auto-value:1.2'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.4.0'
     compile 'com.squareup.sqlbrite:sqlbrite:0.7.0'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.9'
-    compile 'com.android.support:percent:23.4.0'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.google.android.gms:play-services-auth:9.4.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.google.android.gms:play-services-auth:9.6.1'
     compile 'pub.devrel:easypermissions:0.1.5'
-    compile 'com.jakewharton:butterknife:8.2.1'
-    apt 'com.jakewharton:butterknife-compiler:8.2.1'
-    compile 'com.android.support:support-v4:23.4.0'
-    compile 'com.android.support:design:23.4.0'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.jakewharton.rxrelay:rxrelay:1.2.0'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    apt 'com.google.auto.value:auto-value:1.2'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    provided 'com.google.dagger:dagger-compiler:2.0.2'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    provided 'com.google.auto.value:auto-value:1.2'
 }
 

@@ -7,7 +7,6 @@
     <string name="done">Готово</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="takenTextView">Взято</string>
     <string name="remainsTextView">Осталось</string>
     <string name="inputNumber">Введите количество…</string>
@@ -18,4 +17,21 @@
     <string name="enterPinCode">Введите ПИН-код:</string>
     <string name="log_out">Log out</string>
     <string name="check_queue">check queue</string>
+    <string name="checkSketchVersion">Проверить версию чертежа</string>
+    <string name="checkQuantityFunc">checkQuantity</string>
+    <string name="checkSketchFunc">checkSketchVersion</string>
+    <string name="noInternetError">Интернет-соединение не доступно! \n Попробуйте включить Wi-Fi или Передачу Данных</string>
+    <string name="redirectedToQueue">Интернет-соединение не доступно! \n Запрос передан в очередь запросов \n</string>
+    <string name="needsGoogleAccount">Этому приложению нужен доступ к вашей учетной записи Google</string>
+    <string name="requestQueue">Очередь запросов</string>
+    <string name="requestCancelled">Запрос отменен.</string>
+    <string name="requestInProcess">Запрос выполняется, подождите...</string>
+    <string name="noUserForPassword">Пользователь с указанным паролем не найден!</string>
+    <string name="mustBeNumber">Введите число!</string>
+    <string name="queueIsEmpty">Очередь пуста</string>
+    <string name="getAccountsDataFunc">getAccountsData</string>
+    <string name="refreshDatabase">refreshDatabase</string>
+    <string name="scriptName">Учет комплектации</string>
+    <string name="scriptId">MqNqphcRHgmupV7ODRojuJ6lftPelU-yI</string>
+    <string name="databaseUpdateTimestamp">com.tr.nsergey,uchetKomplektacii.DATABASE_UPDATE_TIMESTAMPS</string>
 </resources>
