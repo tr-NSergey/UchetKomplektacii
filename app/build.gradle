@@ -5,14 +5,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'UchetKomplektacii'
-            keyPassword 'HiSilvia5469'
-            storeFile file('/home/Sergey/keystores/android.jks')
-            storePassword 'HiSilvia5469'
-        }
-    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
     compileOptions {
