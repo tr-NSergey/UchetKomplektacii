@@ -1,7 +1,7 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="DefaultTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="DefaultTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -14,10 +14,28 @@
         <item name="android:textViewStyle">@android:style/TextAppearance.Large</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
     </style>
+
     <style name="DefaultTheme.ActionMode" parent="Widget.AppCompat.ActionMode">
         <item name="android:actionModeBackground">@color/colorPrimary</item>
         <item name="actionModeBackground">@color/colorPrimary</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="background">@color/colorPrimary</item>
+    </style>
+
+    <style name="inputCircle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">32dp</item>
+        <item name="android:src">@drawable/before_input</item>
+    </style>
+    <style name="authKeyboardButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">@color/brightText</item>
+        <item name="android:textSize">36sp</item>
     </style>
 </resources>

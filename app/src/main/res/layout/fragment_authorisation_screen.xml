@@ -3,14 +3,14 @@
     android:id="@+id/f_a_sParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
     tools:context=".View.AuthorizationScreen">
 
     <LinearLayout
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"
         android:gravity="center_vertical"
         android:orientation="vertical">
 
@@ -29,178 +29,104 @@
 
             <ImageView
                 android:id="@+id/firstCircle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="32dp"
-                android:src="@drawable/before_input" />
+                style="@style/inputCircle" />
 
             <ImageView
                 android:id="@+id/secondCircle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="32dp"
-                android:src="@drawable/before_input" />
+                style="@style/inputCircle" />
 
             <ImageView
                 android:id="@+id/thirdCircle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="32dp"
-                android:src="@drawable/before_input" />
+                style="@style/inputCircle" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/firstRow"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:gravity="bottom">
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/oneBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1"/>
+            style="@style/authKeyboardButton"
+            android:text="1" />
+
         <Button
             android:id="@+id/twoBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="2"/>
+            style="@style/authKeyboardButton"
+            android:text="2" />
+
         <Button
             android:id="@+id/threeBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="3"/>
+            style="@style/authKeyboardButton"
+            android:text="3" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="bottom">
+
         <Button
             android:id="@+id/fourBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="4"/>
+            style="@style/authKeyboardButton"
+            android:text="4" />
+
         <Button
             android:id="@+id/fiveBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="5"/>
+            style="@style/authKeyboardButton"
+            android:text="5" />
+
         <Button
             android:id="@+id/sixBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="6"/>
+            style="@style/authKeyboardButton"
+            android:text="6" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="bottom">
+
         <Button
             android:id="@+id/sevenBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="7"/>
+            style="@style/authKeyboardButton"
+            android:text="7" />
+
         <Button
             android:id="@+id/eightBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="8"/>
+            style="@style/authKeyboardButton"
+            android:text="8" />
+
         <Button
             android:id="@+id/nineBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="9"/>
+            style="@style/authKeyboardButton"
+            android:text="9" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="bottom">
+
         <Button
             android:id="@+id/cancelBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="ОТМЕНА"/>
+            style="@style/authKeyboardButton"
+            android:text="ОТМЕНА"
+            android:textSize="22sp"
+            />
+
         <Button
             android:id="@+id/zeroBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="36sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="0"/>
+            style="@style/authKeyboardButton"
+            android:text="0" />
+
         <Button
             android:id="@+id/deleteBtn"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:padding="16dp"
-            android:textColor="#ffffff"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Х"/>
+            style="@style/authKeyboardButton"
+            android:text="Х"
+            />
     </LinearLayout>
 </LinearLayout>
