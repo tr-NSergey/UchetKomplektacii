@@ -33,7 +33,7 @@ public class ArtObject {
     static final String QUANTITY_FIELD = "quantity";
     static final String OLD_QUANTITY_FIELD = "oldQuantity";
     static final String LOCATION_FIELD = "location";
-    private final Integer _id;
+    private Integer _id;
     private String function;
     private final String art;
     private final String name;
@@ -64,8 +64,8 @@ public class ArtObject {
         this.userName = userName != null? userName: "";
         this.modification = modification != null? modification: "";
         this.location = location != null? location: "";
-        this.quantity = quantity != null? quantity: 0;
-        this.oldQuantity = oldQuantity != null? oldQuantity: 0;
+        this.quantity = quantity != null? quantity: -1;
+        this.oldQuantity = oldQuantity != null? oldQuantity: -1;
     }
     public String getFunction(){
         return function;
@@ -169,6 +169,10 @@ public class ArtObject {
 
     public void setFunction(String function) {
         this.function = function;
+    }
+
+    public void set_id(Integer _id) {
+        this._id = _id;
     }
 }
 

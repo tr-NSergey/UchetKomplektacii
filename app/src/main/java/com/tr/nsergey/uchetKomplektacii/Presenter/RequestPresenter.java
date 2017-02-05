@@ -69,11 +69,9 @@ public class RequestPresenter {
     }
 
     public void onResume() {
-        if (!isServiceRunning("com.tr.nsergey.uchetKomplektacii.Model.QueueResolver") &&
-                requestQue.size() != 0) {
-            startQueueResolver();
-        }
+        startQueueResolver();
     }
+
     public void onRefresh() {
         functionName = context.getString(R.string.getAccountsDataFunc);
         parametersMap.clear();
@@ -164,9 +162,9 @@ public class RequestPresenter {
                         parametersMap.put("userName" + integer.toString(), uName);
                         parametersMap.put("deviceId" + integer.toString(), Settings.Secure.getString(context.getContentResolver(),
                                 Settings.Secure.ANDROID_ID));
-                        requestObjects.get(integer).setUserName(uName);
-                        requestObjects.get(integer).setFunction(functionName);
-                        requestObjects.get(integer).setOldQuantity((int) (Calendar.getInstance().getTimeInMillis() / 1000));
+                        requestObject.setUserName(uName);
+                        requestObject.setFunction(functionName);
+                        requestObject.setOldQuantity((int) (Calendar.getInstance().getTimeInMillis() / 1000));
                     });
             historyPresenter.addEntries(requestObjects);
         }
@@ -186,10 +184,13 @@ public class RequestPresenter {
         getResultsFromApi();
     }
 
-    private void startQueueResolver() {
-        if (requestQue.size() != 0 && App.getCREDENTIAL().getSelectedAccountName() != null) {
-            for (ArtObject artObject : requestQue) {
-                QueueResolver.startResolveQueue(context, artObject);
+    public void startQueueResolver() {
+        if (!isServiceRunning("com.tr.nsergey.uchetKomplektacii.Model.QueueResolver") &&
+                requestQue.size() != 0) {
+            if (requestQue.size() != 0 && App.getCREDENTIAL().getSelectedAccountName() != null) {
+                for (ArtObject artObject : requestQue) {
+                    QueueResolver.startResolveQueue(context, artObject);
+                }
             }
         }
     }
@@ -269,9 +270,10 @@ public class RequestPresenter {
                         Toast.LENGTH_LONG).show();
             } else {
                 //now we can load from the database
-                if(App.IS_EDITABLE_MODE){
+                if (App.IS_EDITABLE_MODE) {
                     List<ArtObject> artObjects = backupPresenter.getEntries(parametersMap.get("artNum0"));
-                    for(ArtObject artObject: artObjects){
+                    for (ArtObject artObject : artObjects) {
+                        artObject.set_id(null);
                         artObject.setFunction(functionName);
                     }
                     mainActivity.showRequestResult(artObjects);

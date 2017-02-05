@@ -63,7 +63,7 @@ public class BackupService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("tr.n.sergey", "BackupService onStartCommand, thread " + Thread.currentThread().getName());
         // TODO: 28.01.17 change to a decent interval, 1 minute is just for testing
-        Observable.interval(0, 60, TimeUnit.SECONDS, Schedulers.io())
+        Observable.interval(0, 2, TimeUnit.HOURS, Schedulers.io())
                 .forEach((l) -> {
                     Map<String, String> prefMap;
                     try {

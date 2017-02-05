@@ -23,6 +23,7 @@ import com.tr.nsergey.uchetKomplektacii.App;
 import com.tr.nsergey.uchetKomplektacii.Presenter.BackupPresenter;
 import com.tr.nsergey.uchetKomplektacii.Presenter.NbAccountsManager;
 import com.tr.nsergey.uchetKomplektacii.Presenter.QueuePresenter;
+import com.tr.nsergey.uchetKomplektacii.Presenter.RequestPresenter;
 import com.tr.nsergey.uchetKomplektacii.R;
 import com.tr.nsergey.uchetKomplektacii.Services.BackupService;
 import com.tr.nsergey.uchetKomplektacii.Services.TokenRefreshService;
@@ -62,6 +63,8 @@ public class AppsScriptRequest {
     QueuePresenter queuePresenter;
     @Inject
     BackupPresenter backupPresenter;
+    @Inject
+    RequestPresenter requestPresenter;
 
     public AppsScriptRequest(String functionName, Map<String, String> parametersMap,
                              List<ArtObject> requestObjects) {
@@ -194,6 +197,7 @@ public class AppsScriptRequest {
                         MainActivity.REQUEST_AUTHORIZATION);
             } else if (mLastError instanceof UnknownHostException) {
                 queuePresenter.addEntries(requestObjects);
+                requestPresenter.startQueueResolver();
                 Toast.makeText(mainActivity, "Активное WiFi подключение не имеет доступа к сети интернет! \n" +
                                 "Запрос передан в очередь запросов",
                         Toast.LENGTH_LONG).show();
@@ -238,9 +242,9 @@ public class AppsScriptRequest {
         request.setParameters(list);
         // TODO: 02.11.16 change to false on release
         request.setDevMode(true);
-//        if (!App.TOKEN_REFRESH_SERVICE_RUNNING) {
-//            new TokenRefreshService().start();
-//        }
+        if (!App.TOKEN_REFRESH_SERVICE_RUNNING) {
+            new TokenRefreshService().start();
+        }
         if (!App.BACKUP_SERVICE_RUNNING){
             App.APP_CONTEXT.startService(new Intent(App.APP_CONTEXT, BackupService.class));
         }

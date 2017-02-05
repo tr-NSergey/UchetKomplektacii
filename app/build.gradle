@@ -23,8 +23,8 @@ android {
         applicationId "com.tr.nsergey.uchetKomplektacii"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 4
-        versionName "2.0"
+        versionCode 5
+        versionName "3.0"
     }
     buildTypes {
         release {

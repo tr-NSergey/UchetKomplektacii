@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,26 +9,23 @@
     <TextView
         android:id="@+id/infoTextViewAQR"
         android:layout_width="match_parent"
-        android:layout_margin="16dp"
         android:layout_height="wrap_content"
-        android:textStyle="bold"/>
-    <Button
-        android:id="@+id/sendRequestButton"
-        android:text="@string/sendRequest"
-        android:layout_height="130dp"
-        android:layout_width="match_parent"
         android:layout_margin="16dp"
-        android:layout_alignParentBottom="true"
-        android:textSize="30sp"
-        android:background="@drawable/button_effect"/>
+        android:textStyle="bold" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_below="@id/infoTextViewAQR"
-        android:layout_above="@id/sendRequestButton"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_margin="0dp"
         android:padding="0dp"
-        android:scrollbars="vertical"
-        android:layout_height="0dp" />
+        android:scrollbars="vertical" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/sendRequestButton"
+        style="@style/generalBigButton"
+        android:text="@string/sendRequest" />
+
+
+</LinearLayout>

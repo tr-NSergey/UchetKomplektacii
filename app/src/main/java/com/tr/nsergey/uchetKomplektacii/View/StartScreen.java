@@ -28,7 +28,6 @@ import static com.tr.nsergey.uchetKomplektacii.App.I_MODE_QR;
 
 public class StartScreen extends Fragment {
 
-    private static final String MESSAGE_PARAM = "message";
     private static final String USERNAME = "username";
 
     @BindViews({R.id.addQtyButton,
@@ -38,14 +37,11 @@ public class StartScreen extends Fragment {
     protected List<Button> buttons;
     @BindView(R.id.userName)
     protected TextView userNameTextView;
-    @BindView(R.id.infoTextViewSS)
-    protected TextView mInfoTextView;
     @BindView(R.id.qrMode)
     protected Button qrModeButton;
     @BindView(R.id.manualMode)
     protected Button manualModeButton;
 
-    private String infoMessage;
     private String userName;
 
     private Observer<Integer> mListener;
@@ -54,10 +50,9 @@ public class StartScreen extends Fragment {
         // Required empty public constructor
     }
 
-    public static StartScreen newInstance(String message, String userName) {
+    public static StartScreen newInstance(String userName) {
         StartScreen fragment = new StartScreen();
         Bundle args = new Bundle();
-        args.putString(MESSAGE_PARAM, message);
         args.putString(USERNAME, userName);
         fragment.setArguments(args);
         return fragment;
@@ -67,7 +62,6 @@ public class StartScreen extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            infoMessage = getArguments().getString(MESSAGE_PARAM);
             userName = getArguments().getString(USERNAME);
         }
     }
@@ -135,12 +129,5 @@ public class StartScreen extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
-
-    public void setMessage(String message) {
-        infoMessage = message;
-        if (mInfoTextView != null) {
-            mInfoTextView.setText(message);
-        }
     }
 }

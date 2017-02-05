@@ -4,13 +4,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.tr.nsergey.uchetKomplektacii.R;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -28,12 +25,12 @@ public class ArtEditRecyclerAdapter extends RecyclerView.Adapter<ArtEditRecycler
     }
 
     final static class ViewHolder extends RecyclerView.ViewHolder {
-        Button artButton;
+        TextView artTextView;
         EditText artEditText;
 
         ViewHolder(View view) {
             super(view);
-            artButton = (Button) view.findViewById(R.id.artButton);
+            artTextView = (TextView) view.findViewById(R.id.artTextView);
             artEditText = (EditText) view.findViewById(R.id.artEditText);
         }
     }
@@ -47,7 +44,7 @@ public class ArtEditRecyclerAdapter extends RecyclerView.Adapter<ArtEditRecycler
     @Override
     public void onBindViewHolder(ArtEditRecyclerAdapter.ViewHolder holder, int position) {
         holder.itemView.setTag(artObjects.get(position));
-        holder.artButton.setText(String.format("%1$s %2$s (%3$s шт.)",
+        holder.artTextView.setText(String.format("%1$s %2$s (%3$s шт.)",
                 artObjects.get(position).getArt(),
                 artObjects.get(position).getModification(),
                 artObjects.get(position).getQuantity()));

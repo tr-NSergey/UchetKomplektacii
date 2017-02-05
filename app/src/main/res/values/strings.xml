@@ -25,7 +25,7 @@
     <string name="needsGoogleAccount">Этому приложению нужен доступ к вашей учетной записи Google</string>
     <string name="requestQueue">Очередь запросов</string>
     <string name="requestCancelled">Запрос отменен.</string>
-    <string name="requestInProcess">Запрос выполняется, подождите...</string>
+    <string name="requestInProcess">Запрос выполняется, подождите…</string>
     <string name="noUserForPassword">Пользователь с указанным паролем не найден!</string>
     <string name="mustBeNumber">Введите число!</string>
     <string name="queueIsEmpty">Очередь пуста</string>
@@ -34,4 +34,9 @@
     <string name="scriptName">Учет комплектации</string>
     <string name="scriptId">MqNqphcRHgmupV7ODRojuJ6lftPelU-yI</string>
     <string name="databaseUpdateTimestamp">com.tr.nsergey,uchetKomplektacii.DATABASE_UPDATE_TIMESTAMPS</string>
+    <string name="addModification">Добавить мод.</string>
+    <string name="qrModeOn">QR-код</string>
+    <string name="manualModeOn">Ручной ввод</string>
+    <string name="modInputHint">Модификация…</string>
+    <string name="artInputHint">Артикул №…</string>
 </resources>

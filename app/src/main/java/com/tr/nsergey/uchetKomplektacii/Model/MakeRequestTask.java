@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.GoogleAuthException;
 import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.googleapis.extensions.android.accounts.GoogleAccountManager;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GooglePlayServicesAvailabilityIOException;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -127,9 +128,9 @@ public class MakeRequestTask extends AsyncTask<Void, Void, JSONObject> {
         request.setParameters(list);
         // TODO: 02.11.16 change to false on release
         request.setDevMode(true);
-//        if (!App.TOKEN_REFRESH_SERVICE_RUNNING) {
-//            new TokenRefreshService().start();
-//        }
+        if (!App.TOKEN_REFRESH_SERVICE_RUNNING) {
+            new TokenRefreshService().start();
+        }
         if (!App.BACKUP_SERVICE_RUNNING){
             App.APP_CONTEXT.startService(new Intent(App.APP_CONTEXT, BackupService.class));
         }

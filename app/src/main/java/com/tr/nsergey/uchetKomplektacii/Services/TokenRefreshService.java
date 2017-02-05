@@ -25,12 +25,13 @@ public class TokenRefreshService extends IntentService{
                 .subscribe(context -> {
                     App.TOKEN_REFRESH_SERVICE_RUNNING = true;
                     try {
-                        Log.d("tr.n.sergey", "TokenRefreshService before waiting, thread " + Thread.currentThread().getName());
-                        wait(10*60*1000);
-                        new GoogleAccountManager(context)
-                                .invalidateAuthToken(App.getCREDENTIAL().getToken());
-                        App.TOKEN_REFRESH_SERVICE_RUNNING = false;
-                        Log.d("tr.n.sergey", "TokenRefreshService after refreshing, thread " + Thread.currentThread().getName());
+                        for(;;) {
+                            Log.d("tr.n.sergey", "TokenRefreshService before waiting, thread " + Thread.currentThread().getName());
+                            wait(50 * 60 * 1000);
+                            new GoogleAccountManager(context)
+                                    .invalidateAuthToken(App.getCREDENTIAL().getToken());
+                            Log.d("tr.n.sergey", "TokenRefreshService after refreshing, thread " + Thread.currentThread().getName());
+                        }
                     } catch (InterruptedException | IOException | GoogleAuthException e){
                         App.TOKEN_REFRESH_SERVICE_RUNNING = false;
                     }

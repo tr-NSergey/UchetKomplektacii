@@ -14,10 +14,47 @@
         <item name="android:textViewStyle">@android:style/TextAppearance.Large</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
     </style>
+
     <style name="DefaultTheme.ActionMode" parent="Widget.AppCompat.ActionMode">
         <item name="android:actionModeBackground">@color/colorPrimary</item>
         <item name="actionModeBackground">@color/colorPrimary</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="background">@color/colorPrimary</item>
     </style>
+
+    <style name="inputCircle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">32dp</item>
+        <item name="android:src">@drawable/before_input</item>
+    </style>
+
+    <style name="authKeyboardButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">@color/brightText</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="bigButtonText">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="generalBigButton" parent="@style/bigButtonText">
+        <item name="android:layout_height">120dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">12dp</item>
+        <item name="android:background">@drawable/button_effect</item>
+    </style>
+
+    <style name="startScreenButton" parent="@style/generalBigButton">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+
 </resources>

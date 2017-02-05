@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.tr.nsergey.uchetKomplektacii.App;
 import com.tr.nsergey.uchetKomplektacii.Model.ArtObject;
 import com.tr.nsergey.uchetKomplektacii.Model.ArtEditRecyclerAdapter;
 import com.tr.nsergey.uchetKomplektacii.OpNames;
@@ -32,9 +33,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class AfterQrScreen extends Fragment implements RecyclerView.OnItemTouchListener{
-
-    private static final String BTN_NAME_PARAM = "btnname";
+public class AfterQrScreen extends Fragment implements RecyclerView.OnItemTouchListener {
 
     private OnAfterQrInteractionListener mListener;
     @BindView(R.id.infoTextViewAQR)
@@ -75,12 +74,12 @@ public class AfterQrScreen extends Fragment implements RecyclerView.OnItemTouchL
         sendRequestButton.setText(OpNames.get(possibleArts.get(0).getFunction()));
         sendRequestButton.setOnClickListener(v -> {
             List<ArtObject> artObjects = new ArrayList<>();
-            for(int i = 0; i < mRecyclerView.getChildCount(); i++){
+            for (int i = 0; i < mRecyclerView.getChildCount(); i++) {
                 View view = mRecyclerView.getChildAt(i);
-                EditText mQty = (EditText)view.findViewById(R.id.artEditText);
+                EditText mQty = (EditText) view.findViewById(R.id.artEditText);
                 String qty = mQty.getText().toString();
-                if(!qty.equals("")){
-                    ArtObject selectedObject = (ArtObject)view.getTag();
+                if (!qty.equals("")) {
+                    ArtObject selectedObject = (ArtObject) view.getTag();
                     try {
                         selectedObject.setQuantity(Integer.valueOf(qty));
                         artObjects.add(selectedObject);
@@ -164,21 +163,24 @@ public class AfterQrScreen extends Fragment implements RecyclerView.OnItemTouchL
     public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
 
     }
+
     private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onSingleTapConfirmed(MotionEvent event) {
             View view = mRecyclerView.findChildViewUnder(event.getX(), event.getY());
-            if(view != null) {
-                Button button = (Button) view.findViewById(R.id.artButton);
-                if (event.getY() >= button.getTop() + view.getTop() &&
-                        event.getY() <= button.getBottom() + view.getTop()) {
+            if (view != null) {
+                TextView artTextView = (TextView) view.findViewById(R.id.artTextView);
+                if (event.getY() >= artTextView.getTop() + view.getTop() &&
+                        event.getY() <= artTextView.getBottom() + view.getTop()) {
                     EditText editText = (EditText) view.findViewById(R.id.artEditText);
                     if (editText.getVisibility() == View.GONE) {
                         editText.setVisibility(View.VISIBLE);
-                        button.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.chevron_up), null);
+                        artTextView.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.chevron_up), null);
+                        artTextView.setBackgroundColor(getResources().getColor(R.color.colorButtonBackgroundBright));
                     } else {
                         editText.setVisibility(View.GONE);
-                        button.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.chevron_down), null);
+                        artTextView.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.chevron_down), null);
+                        artTextView.setBackgroundColor(getResources().getColor(R.color.colorButtonBackground));
                     }
                 }
             }
@@ -190,6 +192,7 @@ public class AfterQrScreen extends Fragment implements RecyclerView.OnItemTouchL
             super.onLongPress(event);
         }
     }
+
     public interface OnAfterQrInteractionListener {
         void onSendRequestClick(List<ArtObject> artObjects);
     }

@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.tr.nsergey.uchetKomplektacii.App;
@@ -150,9 +151,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void showProgress(boolean isBackground) {
-        if (startScreen != null) {
-            startScreen.setMessage("");
-        }
         if (!isBackground) {
             mProgress.show();
         }
@@ -163,7 +161,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onRequestCancelled() {
-        startScreen.setMessage(getString(R.string.requestCancelled));
+        Toast.makeText(this, getString(R.string.requestCancelled), Toast.LENGTH_LONG).show();
     }
     /**
      * @param artObjects - list of ArtObjects received from a request.
@@ -295,9 +293,8 @@ public class MainActivity extends AppCompatActivity
                 break;
             case REQUEST_GOOGLE_PLAY_SERVICES:
                 if (resultCode != RESULT_OK) {
-                    startScreen.setMessage(
-                            "This app requires Google Play Services. Please install " +
-                                    "Google Play Services on your device and relaunch this app.");
+                    Toast.makeText(this, "This app requires Google Play Services. Please install " +
+                            "Google Play Services on your device and relaunch this app.", Toast.LENGTH_LONG).show();
                 } else {
                     requestPresenter.onGoogleServicesObtained();
                 }
@@ -491,7 +488,7 @@ public class MainActivity extends AppCompatActivity
             showFragment(sketchCheckingScreen, SKETCH_CHECKING_SCREEN_FRAGMENT_TAG);
         } else {
             App.MODE = App.MODE_ACCOUNTING;
-            startScreen = StartScreen.newInstance("", userName);
+            startScreen = StartScreen.newInstance(userName);
             startScreen.setHasOptionsMenu(true);
             showFragment(startScreen, START_SCREEN_FRAGMENT_TAG);
         }
