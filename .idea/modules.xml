@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ScriptQuickstart.iml" filepath="$PROJECT_DIR$/ScriptQuickstart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UchetKomplektacii.iml" filepath="$PROJECT_DIR$/UchetKomplektacii.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
