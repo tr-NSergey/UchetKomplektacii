@@ -6,4 +6,7 @@
     <color name="colorButtonBackground">#9e9e9e</color>
     <color name="brightText">#ffffff</color>
     <color name="darkText">#616161</color>
+    <color name="tableBackgroundBright">#ecc2c4</color>
+    <color name="tableBackgroundDark">#ef9a9a</color>
+
 </resources>

@@ -34,4 +34,6 @@
     <string name="scriptName">Учет комплектации</string>
     <string name="scriptId">MqNqphcRHgmupV7ODRojuJ6lftPelU-yI</string>
     <string name="databaseUpdateTimestamp">com.tr.nsergey,uchetKomplektacii.DATABASE_UPDATE_TIMESTAMPS</string>
+    <string name="qrModeOn">QR-код</string>
+    <string name="manualModeOn">Ручной ввод</string>
 </resources>

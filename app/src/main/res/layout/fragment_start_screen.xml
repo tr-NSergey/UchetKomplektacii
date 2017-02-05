@@ -1,19 +1,14 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".View.StartScreen">
 
-    <TextView
-        android:id="@+id/infoTextViewSS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
         android:orientation="vertical">
 
         <TextView
@@ -21,82 +16,64 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
-            android:paddingTop="0dp"
+            android:background="@color/colorPrimary"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
             android:paddingBottom="0dp"
             android:paddingLeft="8dp"
             android:paddingRight="16dp"
-            android:background="@color/colorPrimary"
-            android:gravity="left"
-            android:textColor="@color/brightText"
-            android:text=""/>
+            android:paddingTop="0dp"
+            android:scrollHorizontally="true"
+            android:text=""
+            android:textColor="@color/brightText" />
+
         <Button
             android:id="@+id/addQtyButton"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="20"
-            android:layout_margin="12dp"
-            android:background="@drawable/button_effect"
-            android:textSize="28sp"
+            style="@style/startScreenButton"
             android:text="@string/addToWh" />
 
         <Button
             android:id="@+id/removeQtyButton"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="20"
-            android:layout_margin="12dp"
-            android:background="@drawable/button_effect"
-            android:textSize="28sp"
+            style="@style/startScreenButton"
             android:text="@string/takeFromWh" />
 
         <Button
             android:id="@+id/remainsButton"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="20"
-            android:layout_margin="12dp"
-            android:background="@drawable/button_effect"
-            android:textSize="28sp"
+            style="@style/startScreenButton"
             android:text="@string/inputRemainings" />
 
         <Button
             android:id="@+id/checkButton"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="20"
-            android:layout_margin="12dp"
-            android:background="@drawable/button_effect"
-            android:textSize="28sp"
+            style="@style/startScreenButton"
             android:text="@string/checkQty" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="?android:attr/buttonBarStyle"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/qrMode"
                 android:layout_width="0dp"
-                android:layout_weight="50"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@color/colorPrimary"
+                android:text="@string/qrModeOn"
                 android:textColor="@color/brightText"
-                android:textStyle="bold"
                 android:textSize="14sp"
-                android:text="QR-код"
-                style="?android:attr/buttonBarButtonStyle"
-                />
+                android:textStyle="bold" />
+
             <Button
                 android:id="@+id/manualMode"
                 android:layout_width="0dp"
-                android:layout_weight="50"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@color/mainBackground"
+                android:text="@string/manualModeOn"
                 android:textColor="@color/darkText"
-                android:textStyle="bold"
                 android:textSize="14sp"
-                android:text="Ручной ввод"
-                style="?android:attr/buttonBarButtonStyle"
-                />
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

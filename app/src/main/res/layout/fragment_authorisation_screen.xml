@@ -115,7 +115,7 @@
             android:id="@+id/cancelBtn"
             style="@style/authKeyboardButton"
             android:text="ОТМЕНА"
-            android:textSize="22sp"
+            android:textSize="18sp"
             />
 
         <Button
@@ -127,6 +127,7 @@
             android:id="@+id/deleteBtn"
             style="@style/authKeyboardButton"
             android:text="Х"
+            android:textSize="18sp"
             />
     </LinearLayout>
 </LinearLayout>

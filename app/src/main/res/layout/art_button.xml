@@ -2,17 +2,26 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <Button
+
+    <TextView
         android:id="@+id/artButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
+        android:layout_height="48dp"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="16dp"
+        android:text="This is the first list item"
+        android:textSize="18sp"
+        android:background="#ececec"
         android:drawableRight="@drawable/chevron_down"/>
+
     <EditText
         android:id="@+id/artEditText"
         android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:paddingLeft="16dp"
+        android:textSize="18dp"
         android:inputType="phone"
+        android:background="#f1f1f1"
         android:hint="Введите количество..."/>
 </LinearLayout>
