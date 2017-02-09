@@ -1,7 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/refresh"
-        android:title="@string/done"
-        android:icon="@drawable/refresh"
-        app:showAsAction="always"/>
+    <item
+        android:id="@+id/more"
+        android:icon="@drawable/ic_dots_vertical"
+        android:title="Настройки"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/refresh"
+                android:title="Обновить пароли" />
+            <item
+                android:id="@+id/privacyPolicy"
+                android:title="Конфиденциальность"/>
+        </menu>
+    </item>
 </menu>

@@ -167,23 +167,23 @@ public class AfterQrScreen extends Fragment implements RecyclerView.OnItemTouchL
     private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onSingleTapConfirmed(MotionEvent event) {
-            View view = mRecyclerView.findChildViewUnder(event.getX(), event.getY());
-            if (view != null) {
-                TextView artTextView = (TextView) view.findViewById(R.id.artTextView);
-                if (event.getY() >= artTextView.getTop() + view.getTop() &&
-                        event.getY() <= artTextView.getBottom() + view.getTop()) {
-                    EditText editText = (EditText) view.findViewById(R.id.artEditText);
-                    if (editText.getVisibility() == View.GONE) {
-                        editText.setVisibility(View.VISIBLE);
-                        artTextView.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.chevron_up), null);
-                        artTextView.setBackgroundColor(getResources().getColor(R.color.colorButtonBackgroundBright));
-                    } else {
-                        editText.setVisibility(View.GONE);
-                        artTextView.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.chevron_down), null);
-                        artTextView.setBackgroundColor(getResources().getColor(R.color.colorButtonBackground));
-                    }
-                }
-            }
+//            View view = mRecyclerView.findChildViewUnder(event.getX(), event.getY());
+//            if (view != null) {
+//                TextView artTextView = (TextView) view.findViewById(R.id.artTextView);
+//                if (event.getY() >= artTextView.getTop() + view.getTop() &&
+//                        event.getY() <= artTextView.getBottom() + view.getTop()) {
+//                    EditText editText = (EditText) view.findViewById(R.id.artEditText);
+//                    if (editText.getVisibility() == View.GONE) {
+//                        editText.setVisibility(View.VISIBLE);
+//                        artTextView.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.chevron_up), null);
+//                        artTextView.setBackgroundColor(getResources().getColor(R.color.colorButtonBackgroundBright));
+//                    } else {
+//                        editText.setVisibility(View.GONE);
+//                        artTextView.setCompoundDrawablesWithIntrinsicBounds(null, null, getResources().getDrawable(R.drawable.chevron_down), null);
+//                        artTextView.setBackgroundColor(getResources().getColor(R.color.colorButtonBackground));
+//                    }
+//                }
+//            }
             return super.onSingleTapConfirmed(event);
         }
 

@@ -19,8 +19,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -164,6 +166,19 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this, getString(R.string.requestCancelled), Toast.LENGTH_LONG).show();
     }
     /**
+     * @param requestResult - any string result received (sketch version or an error at the point)
+     * */
+    public void showRequestResult(String requestResult) {
+        App.IS_EDITABLE_MODE = false;
+        if(resultScreen == null){
+            resultScreen = ResultScreen.newInstance();
+            resultScreen.setHasOptionsMenu(true);
+        }
+        resultScreen.setResultMessage(requestResult);
+        hideProgress();
+        showFragment(resultScreen, RESULT_SCREEN_FRAGMENT_TAG);
+    }
+    /**
      * @param artObjects - list of ArtObjects received from a request.
      * */
     public void showRequestResult(List<ArtObject> artObjects){
@@ -213,6 +228,10 @@ public class MainActivity extends AppCompatActivity
                 return true;
             case R.id.refresh:
                 refreshUserData();
+                return true;
+            case R.id.privacyPolicy:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/1SRR6f4MTk0gHnxJ4BUlflklOY6ZbvnSn5FEaT1zJfPg/edit"));
+                startActivity(browserIntent);
                 return true;
             case R.id.logout:
                 backToLogin();

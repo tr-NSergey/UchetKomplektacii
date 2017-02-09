@@ -233,6 +233,13 @@ public class MakeRequestTask extends AsyncTask<Void, Void, JSONObject> {
                                 mainActivity.showRequestResult(artObjects);
                             }
                             break;
+                        case "sketchVersion":
+                            if(mainActivity != null){
+                                mainActivity.showRequestResult(response.getString(resultCode));
+                            }
+                            break;
+                        default:
+                            break;
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

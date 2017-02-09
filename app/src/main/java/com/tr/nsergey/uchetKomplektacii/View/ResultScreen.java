@@ -26,6 +26,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ResultScreen extends Fragment {
+    public static final String ARTS_MODE = "artsMode";
+    public static final String MESSAGE_MODE = "messageMode";
     private OnResultScreenInteractionListener mListener;
     private List<ArtObject> resultArts;
     private ArtShowRecyclerAdapter artShowRecyclerAdapter;
@@ -36,6 +38,8 @@ public class ResultScreen extends Fragment {
     RecyclerView mRecyclerView;
     @BindView(R.id.toMainScreen)
     Button toMainScreen;
+    private String resultMessage;
+    private String resultMode;
 
     public ResultScreen() {
         // Required empty public constructor
@@ -54,11 +58,16 @@ public class ResultScreen extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (infoTextView != null) {
+        if (resultMode.equals(ResultScreen.ARTS_MODE)) {
             artShowRecyclerAdapter.onNext(resultArts);
+            resultMessage = null;
             infoTextView.setText(String.format("%1$s: %2$s (склад - %3$s)", resultArts.get(0).getArt(),
                     resultArts.get(0).getName(), resultArts.get(0).getLocation()));
+        } else {
+            infoTextView.setText(resultMessage);
+            resultArts = null;
         }
+
     }
 
     @Override
@@ -77,6 +86,7 @@ public class ResultScreen extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -103,7 +113,14 @@ public class ResultScreen extends Fragment {
 
     public void setResultArts(List<ArtObject> resultArts) {
         this.resultArts = resultArts;
+        this.resultMode = ResultScreen.ARTS_MODE;
     }
+
+    public void setResultMessage(String resultMessage) {
+        this.resultMessage = resultMessage;
+        this.resultMode = ResultScreen.MESSAGE_MODE;
+    }
+
     public interface OnResultScreenInteractionListener {
         void onToMainScreenClick();
     }
